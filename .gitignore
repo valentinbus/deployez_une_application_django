@@ -1,0 +1,4 @@
+disquaire_project/settings/production.py
+__pycache__
+disquaire_project/staticfiles/
+venv/*
