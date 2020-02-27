@@ -26,11 +26,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '4i&u(!%shd*0-3$ls)fohsjsd48t(gu%1-ch_
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('ENV') == 'PRODUCTION':
-    DEBUG = False
-else:
-    DEBUG = True
-
 
 ALLOWED_HOSTS = ['34.250.158.76']
 
@@ -90,7 +85,7 @@ DATABASES = {
         'NAME': 'disquaire',
 	'USER': 'vbus',
         'PASSWORD': os.getenv('PASSWORD_DB'),
-        'HOST': 'localhost',
+	'HOST': 'localhost',
         'PORT': '5432',
     }
 }
@@ -137,9 +132,7 @@ STATIC_URL = '/static/'
 INTERNAL_IPS = ['127.0.0.1']
 
 
-if os.environ.get('ENV') == 'PRODUCTION':
-
-    STATIC_ROOT = os.path.join(BASE_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_ROOT, 'staticfiles')
 
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
